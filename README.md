@@ -5,7 +5,9 @@ Abhinav Kumar [1DA21IS001]
 P Bharath Kumar Reddy [1DA21IS034]
 
 2. 📦 Project Dependencies / Requirements
+   
 Listed in requirements.txt:
+
 bs4
 Flask
 Flask-SocketIO

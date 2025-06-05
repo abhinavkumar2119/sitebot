@@ -1,56 +1,76 @@
-1. People contributed:
+👥 Contributors
 Abhinav Kumar [1DA21IS001]
+
 P Bharath Kumar Reddy [1DA21IS034]
 
-2. Python Libraries (from requirements.txt)
-These are the core packages the project depends on:
+🧰 Python Libraries (Dependencies)
+Listed in requirements.txt:
 
 Package	Purpose
 Flask	Web framework for handling HTTP routes
-Flask-SocketIO	Enables real-time bidirectional communication using WebSockets
+Flask-SocketIO	Enables real-time, bidirectional communication
 requests	Handles HTTP requests to external websites
-bs4 / beautifulsoup4	Parses HTML content (web scraping)
+bs4 / beautifulsoup4	Parses HTML content for scraping
 python-dotenv	Loads environment variables from .env file
-python-box	Simplifies handling nested dictionaries
+python-box	Simplifies handling of deeply nested dictionaries
 
-3. Runtime Requirements
-To run properly, the project needs:
-
+🧩 Runtime Requirements
 Item	Details
-Python 3.8+	A modern Python version with venv support
-.env file	For storing environment variables if used
-Localhost browser	Used to interact with the Flask web interface
+Python	3.8+ (Ensure venv is available)
+.env file	Optional — store API keys or config variables
+Web Browser	Use browser on localhost to access chat interface
 
-4. Project directory structure
-  sitebot/
+📁 Project Directory Structure
+bash
+Copy
+Edit
+sitebot/
 ├── app.py                  # Main application entry point
-├── requirements.txt        # List of required Python packages
-├── .env                    # (optional) Environment variable definitions
-├── commands/               # Folder containing command modules
-│   ├── __init__.py         # (optional) Makes commands a Python package
-│   ├── fact.py             # Command: provides random facts
-│   ├── help.py             # Command: lists available commands
-│   ├── paster.py           # Command: text/image paste
-│   ├── shoti.py            # Command: short video fetcher
-│   ├── test.py             # Command: for testing/debugging
-│   └── webshot.py          # Command: website screenshot
-├── templates/              # (Flask) HTML templates folder
-│   └── index.html          # Web UI for interacting with the bot
-└── static/                 # (Flask) Static assets like CSS/JS/images
-    └── style.css           # Webpage styling
+├── requirements.txt        # Python packages needed to run the app
+├── .env                    # (optional) Environment variables
+├── commands/               # All command logic
+│   ├── __init__.py
+│   ├── fact.py             # Returns random facts
+│   ├── help.py             # Lists available commands
+│   ├── paster.py           # Pastes text/image to external service
+│   ├── shoti.py            # Short video fetcher
+│   ├── test.py             # Command test/debug module
+│   └── webshot.py          # Takes website screenshot
+├── templates/              # HTML templates for Flask
+│   └── index.html
+└── static/                 # CSS/JS/image assets
+    └── style.css
+🛠️ Development Steps Followed
+Modular Command Design: Each command is separated into its own Python module.
 
+WebSocket Integration: Flask-SocketIO enables instant bot responses.
 
-5. Any other step followed during the developments of the project
-Modular Command Design – Each bot command was built as a separate Python file in the commands/ folder.
+Frontend Setup: Simple Flask-based web UI using HTML/CSS.
 
-WebSocket Integration – Used Flask-SocketIO for real-time communication between user and bot.
+Environment Management: Used .env + python-dotenv for config handling.
 
-Frontend Setup – A simple HTML/CSS chat interface was created for interacting with the bot.
+Command Routing: app.py routes user messages to appropriate modules.
 
-Environment Setup – Used .env and python-dotenv for storing API keys or config.
+Testing: Included test.py for validating functionality.
 
-Command Parsing Logic – app.py routes user messages to the correct command module.
+Isolated Environment: Used venv and requirements.txt for clean dev setup.
 
-Testing and Debugging – Included a test.py module for testing command responses.
+🚀 Getting Started
+bash
+Copy
+Edit
+# Clone the repo
+git clone https://github.com/christhenoob13/sitebot
+cd sitebot
 
-Local Dev with Virtual Env – Used venv and requirements.txt for isolated development setup.
+# Set up virtual environment
+python -m venv venv
+source venv/bin/activate       # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app
+python app.py
+Visit http://localhost:5000 in your browser to start chatting with SiteBot!
+

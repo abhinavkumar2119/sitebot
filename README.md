@@ -1,76 +1,67 @@
-👥 Contributors
+Contributors
+
 Abhinav Kumar [1DA21IS001]
 
 P Bharath Kumar Reddy [1DA21IS034]
 
-🧰 Python Libraries (Dependencies)
+2. 📦 Project Dependencies / Requirements
 Listed in requirements.txt:
+bs4
+Flask
+Flask-SocketIO
+requests
+python-dotenv
+python-box
 
-Package	Purpose
-Flask	Web framework for handling HTTP routes
-Flask-SocketIO	Enables real-time, bidirectional communication
-requests	Handles HTTP requests to external websites
-bs4 / beautifulsoup4	Parses HTML content for scraping
+
+Dependency	Description
+Flask	Web framework used to build the main app
+Flask-SocketIO	Enables real-time communication over WebSocket
+requests	Makes HTTP requests to third-party APIs
+beautifulsoup4	Parses HTML content (web scraping)
 python-dotenv	Loads environment variables from .env file
-python-box	Simplifies handling of deeply nested dictionaries
+python-box	Enables dot notation and cleaner nested dictionary access
 
-🧩 Runtime Requirements
-Item	Details
-Python	3.8+ (Ensure venv is available)
-.env file	Optional — store API keys or config variables
-Web Browser	Use browser on localhost to access chat interface
+Runtime Requirements:
 
-📁 Project Directory Structure
+Python version: 3.8 or above
+
+.env file (optional): For storing secrets/configs
+
+Browser: Required to access the web UI at localhost:5000
+
+3. 🗂 Project Directory Structure
 bash
 Copy
 Edit
 sitebot/
-├── app.py                  # Main application entry point
-├── requirements.txt        # Python packages needed to run the app
-├── .env                    # (optional) Environment variables
-├── commands/               # All command logic
+├── app.py                  # Main application file
+├── requirements.txt        # Lists Python dependencies
+├── .env                    # (optional) Environment configuration file
+├── commands/               # Command-specific Python modules
 │   ├── __init__.py
 │   ├── fact.py             # Returns random facts
-│   ├── help.py             # Lists available commands
-│   ├── paster.py           # Pastes text/image to external service
-│   ├── shoti.py            # Short video fetcher
-│   ├── test.py             # Command test/debug module
-│   └── webshot.py          # Takes website screenshot
-├── templates/              # HTML templates for Flask
+│   ├── help.py             # Lists all commands
+│   ├── paster.py           # Uploads text/images
+│   ├── shoti.py            # Handles short video content
+│   ├── test.py             # For debugging/testing
+│   └── webshot.py          # Screenshots of webpages
+├── templates/              # HTML template folder (Flask)
 │   └── index.html
-└── static/                 # CSS/JS/image assets
+└── static/                 # CSS or JavaScript assets
     └── style.css
-🛠️ Development Steps Followed
-Modular Command Design: Each command is separated into its own Python module.
+4. ⚙️ Other Steps Followed During Development
+Modular Command Handling: Each command is a separate Python script inside commands/ for clean separation of features.
 
-WebSocket Integration: Flask-SocketIO enables instant bot responses.
+WebSocket Communication: Uses Flask-SocketIO for real-time updates between user and bot.
 
-Frontend Setup: Simple Flask-based web UI using HTML/CSS.
+Command Routing Logic: The app.py script dynamically maps user inputs to command modules.
 
-Environment Management: Used .env + python-dotenv for config handling.
+Frontend Chat UI: Built using basic HTML/CSS served through Flask (templates/index.html and static/style.css).
 
-Command Routing: app.py routes user messages to appropriate modules.
+Testing Support: commands/test.py added for testing functionality in isolation.
 
-Testing: Included test.py for validating functionality.
+Environment Config: Optional .env file support handled via python-dotenv.
 
-Isolated Environment: Used venv and requirements.txt for clean dev setup.
-
-🚀 Getting Started
-bash
-Copy
-Edit
-# Clone the repo
-git clone https://github.com/christhenoob13/sitebot
-cd sitebot
-
-# Set up virtual environment
-python -m venv venv
-source venv/bin/activate       # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the app
-python app.py
-Visit http://localhost:5000 in your browser to start chatting with SiteBot!
+Isolated Dev Setup: Virtual environment and requirements.txt ensure consistent local setup.
 
